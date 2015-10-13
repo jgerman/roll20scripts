@@ -12,10 +12,6 @@ on("chat:message", function(msg) {
           var relation = icon["relation"];
           var rolls = new Array();
           
-//          log("Processing icon: " + name);
-//          log("There are " + dice + " rolls");
-//          
-//          log("Idx is " + idx);
           for (var idx = 0; idx < dice; idx++) {
              
             var r = randomInteger(6);
@@ -29,13 +25,6 @@ on("chat:message", function(msg) {
           if(rolls.length > 0) {
               iconRolls.push("{{"+ name + "=" + formatRolls(rolls) + "}}");
           }
-          //sendChat(msg.who, name + " " + rolls + " (" + relation + ")");
-          //var testString = "&{template:default} {{name=Icon Rolls}} {{GGW=6}} {{The Crusader=5,6}}";
-          //sendChat(msg.who, testString);
-          
-          log(formatRolls(rolls));
-          
-          sendChat
       }
       
       var templateHeader = "&{template:default}{{name=" + msg.who +" Icon Rolls}} ";
